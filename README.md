@@ -68,8 +68,8 @@ Esta seção detalha as funcionalidades principais e seus respectivos endpoints.
 6. > SHOW TABLES;
 7. > SELECT * FROM user\G;
 
-## Como acessar o Swagger
-> Coloque em seu operador(Google, Opera) - localhost:8080/api
+### Como acessar o Swagger
+> Coloque em seu operador(Google, Opera): http://localhost:8080/api
 
 Stack de Tecnologia
 - Backend: Nestjs
