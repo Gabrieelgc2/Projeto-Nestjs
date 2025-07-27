@@ -30,7 +30,8 @@ Para rodar a aplicação localmente, siga os passos abaixo:
 Esta seção detalha as funcionalidades principais e seus respectivos endpoints.
 
 1. Criar usuário(/create) - POST
-Exemplo:
+
+   Exemplo:
 
 ```
 {         
@@ -41,7 +42,7 @@ Exemplo:
 }
 ```
 
-2. Listar todos os usuários - GET
+2. Lista todos os usuários - GET
 
 3. Listar usuário com base no id (http:localhost:8080/id) - GET
 
