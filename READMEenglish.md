@@ -54,7 +54,7 @@ This section describes the main functionalities and their respective endpoints.
 ### 2. List all users - `GET`  
 
 ### 3. Get user by ID - `GET`
-**Endpoint:** `id`
+**Endpoint:** `/id`
 
 ### 4. Update user by ID - `PUT`  
 **Endpoint:** `/id`  
