@@ -47,6 +47,8 @@ Esta seção detalha as funcionalidades principais e seus respectivos endpoints.
 3. Listar usuário com base no id (http:localhost:8080/id) - GET
 
 4. Alterar informações do usuário (http:localhost:8080/id) - PUT
+
+     Exemplo:
 ```
 {
     "firstName" : "Andre",
