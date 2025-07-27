@@ -1,5 +1,6 @@
 # API NestJs Crud
 Uma aplicação em que funciona por como princípio pelo CRUD(Create, Read, Update e Delete) onde se tem a opção de criar usuário, ver todos os usuários, ver usuário por id, atualizar seus dados e deletar o usuário.
+- [English version](READMEenglish.md)
 
 ## Como Começar
 Para rodar a aplicação localmente, siga os passos abaixo:
