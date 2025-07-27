@@ -6,8 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('Describing a code by swagger using nestjs')
-    .setDescription('Documentação Swagger de forma simples e prática de acordo com o desafio proposto.')
+    .setTitle('Crud Usuário Nestjs')
+    .setDescription('Documentação Swagger de forma simples e prática.')
     .setVersion('1.0')
     .addTag('users')
     .build();

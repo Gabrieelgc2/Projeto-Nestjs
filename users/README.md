@@ -1,73 +1,75 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# API NestJs Crud
+Uma aplicação em que funciona por como princípio pelo CRUD(Create, Read, Update e Delete) onde se tem a opção de criar usuário, ver todos os usuários, ver usuário por id, atualizar seus dados e deletar o usuário.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Como Começar
+Para rodar a aplicação localmente, siga os passos abaixo:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Pré-requisitos
+- Docker, que pode ser baixado [aqui](https://www.docker.com/products/docker-desktop/) (escolha a versão compatível com seu sistema operacional).
 
-## Description
+### Instalação
+1. Clone o repositório:
+   > git clone [https://github.com/Gabrieelgc2/Projeto-Nestjs.git](https://github.com/Gabrieelgc2/Projeto-Nestjs.git)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+2. Acesse o diretório:
+   > cd users
 
-## Installation
+3. Construa a aplicação com Docker Compose:
+   > docker-compose up --build -d
 
-```bash
-$ npm install
+4. Inicie a aplicação com:
+   > docker-compose up
+
+5. Caso queira desligar a aplicação:
+   > docker compose down -v
+
+## Acessando a Aplicação
+- A aplicação está acessível em http://localhost:8080.
+
+## Endpoints da API e Funcionalidades
+Esta seção detalha as funcionalidades principais e seus respectivos endpoints.
+
+1. Criar usuário(/create) - POST
+Exemplo:
+
+```
+{         
+"firstName" : "Gabriel",    
+"lastName" : "Garcia",
+"isActive" : true   
+
+}
 ```
 
-## Running the app
+2. Listar todos os usuários - GET
 
-```bash
-# development
-$ npm run start
+3. Listar usuário com base no id (http:localhost:8080/id) - GET
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+4. Alterar informações do usuário (http:localhost:8080/id) - PUT
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+{
+    "firstName" : "Andre",
+    "lastName" : "Daniel",
+    "isActive" : true
+}
 ```
+5. Deletar usuário (http:localhost:8080/id) - DEL
 
-## Support
+## Como acessar o banco de dados (MySQL)
+1. > docker ps (para ver o nome dos containers)
+2. > docker exec -it [nome do banco de dados, geralmente é users-db-1] sh
+3. > mysql -u root -p | senha: root123
+4. > SHOW DATABASES;
+5. > USE teste;
+6. > SHOW TABLES;
+7. > SELECT * FROM user\G;
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Como acessar o Swagger
+> Coloque em seu operador(Google, Opera) - localhost:8080/api
 
-## Stay in touch
+Stack de Tecnologia
+- Backend: Nestjs
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Banco de Dados: MySQL
 
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Containerização: Docker, Docker Compose
