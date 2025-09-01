@@ -1,6 +1,8 @@
 # NestJS CRUD API
 
 An application that follows the CRUD principle (Create, Read, Update, Delete), allowing you to create a user, view all users, view a user by ID, update user data, and delete a user.
+- [Portuguese Brazilian version](READMEpt-br.md)
+
 
 ## Getting Started
 
