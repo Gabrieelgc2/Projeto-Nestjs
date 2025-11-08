@@ -5,7 +5,7 @@
 Esta aplicação é uma API RESTful direta construída com **NestJS** que adere estritamente ao princípio **CRUD** (**Criar, Ler, Atualizar, Excluir**) para o gerenciamento de entidades de usuário. Ela fornece os *endpoints* essenciais necessários para: criar um novo usuário, recuperar todos os usuários, visualizar um usuário por ID, modificar dados de um usuário e excluir um usuário.
 
 <p align="center">
-    <a href="READMEpt-br.md">🇧🇷 Versão em Português (Brasil)</a>
+    <a href="README.md">🇧🇷 Versão em Inglês (U.S)</a>
 </p>
 
 ---
