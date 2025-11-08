@@ -1,66 +1,102 @@
-# NestJS CRUD API
+# 🚀 NestJS CRUD API
 
-An application that follows the CRUD principle (Create, Read, Update, Delete), allowing you to create a user, view all users, view a user by ID, update user data, and delete a user.
-- [Portuguese Brazilian version](READMEpt-br.md)
+## 🧑‍💻 Building Robust RESTful APIs
 
+This application is a straightforward RESTful API built with **NestJS** that strictly adheres to the **CRUD** principle (**Create, Read, Update, Delete**) for managing user entities. It provides the essential endpoints needed to: create a new user, retrieve all users, view a user by ID, modify user data, and delete a user.
 
-## Getting Started
-
-To run the application locally, follow the steps below:
-
-### Prerequisites
-
-- Docker: Download it [here](https://www.docker.com/products/docker-desktop) (choose the version compatible with your OS).
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Gabrieelgc2/Projeto-Nestjs.git
-
-2. Go to the project directory:
-    ```bash
-    cd users
-3. Build the application using Docker compose:
-    ```bash
-    docker compose up --build -d
-4. Start the application:
-    ```bash
-    docker compose up
-5. Stop the application:
-    ```bash
-    docker compose down -v
-
-## Accessing the Application
-
-The application will be available at:  
-[http://localhost:8080](http://localhost:8080)
+<p align="center">
+    <a href="READMEpt-br.md">🇧🇷 Portuguese Brazilian Version</a>
+</p>
 
 ---
 
-## API Endpoints and Functionalities
+## 🛠️ Tech Stack
 
-This section describes the main functionalities and their respective endpoints.
+This project leverages modern and powerful technologies for a robust backend and streamlined deployment:
 
-### 1. Create user (`/create`) - `POST`
+| Category | Technology | Description |
+| :--- | :--- | :--- |
+| **Backend Framework** | **NestJS** | A progressive Node.js framework for building efficient, reliable, and scalable server-side applications. |
+| **Database** | **MySQL** | The relational database used for persistence of user data. |
+| **Containerization** | **Docker & Docker Compose** | Used to set up the application and database environments quickly and consistently. |
 
-**Example:**
+---
+
+## ⚙️ Getting Started
+
+To run the application locally, follow the steps below. The project is fully containerized, simplifying setup.
+
+### Prerequisites
+
+* **Docker:** Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop).
+
+### Installation and Execution
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Gabrieelgc2/Projeto-Nestjs.git](https://github.com/Gabrieelgc2/Projeto-Nestjs.git)
+    ```
+
+2.  **Navigate to the project directory (users):**
+    ```bash
+    cd users
+    ```
+
+3.  **Build and start the application/database in detached mode (`-d`):**
+    ```bash
+    docker compose up --build -d
+    ```
+4.  **To view logs or run in the foreground (optional):**
+    ```bash
+    docker compose up
+    ```
+
+5.  **Stop and remove containers (including volumes, if using `-v`):**
+    ```bash
+    docker compose down -v
+    ```
+
+### 🌐 Accessing the Application
+
+The NestJS API will be accessible at:
+**`http://localhost:8080`**
+
+---
+
+## 📑 API Documentation (Swagger)
+
+For a complete interactive overview of the available endpoints, models, and easy testing:
+
+> **Access the Swagger documentation at:**
+> **`http://localhost:8080/api`**
+
+---
+
+## 🔗 API Endpoints and Functionalities
+
+This section summarizes the core CRUD operations available via the API.
+
+| Operation | Method | Endpoint | Description |
+| :--- | :--- | :--- | :--- |
+| **Create** | `POST` | `/create` | Creates a new user in the database. |
+| **Read All** | `GET` | `/` | Retrieves a list of all registered users. |
+| **Read by ID**| `GET` | `/:id` | Retrieves a single user based on their unique ID. |
+| **Update** | `PUT` | `/:id` | Updates the data for a specified user ID. |
+| **Delete** | `DELETE` | `/:id` | Deletes the user associated with the given ID. |
+
+### 📝 Example Payloads
+
+#### **1. Create User (`POST /create`)**
 ```json
 {
   "firstName": "Gabriel",
   "lastName": "Garcia",
   "isActive": true
-} 
-```
+}
+````
 
-### 2. List all users - `GET`  
+#### **4. Update User (`PUT /:id`)**
 
-### 3. Get user by ID - `GET`
-**Endpoint:** `/id`
-
-### 4. Update user by ID - `PUT`  
-**Endpoint:** `/id`  
-**Example:**
 ```json
 {
   "firstName": "Andre",
@@ -68,54 +104,40 @@ This section describes the main functionalities and their respective endpoints.
   "isActive": true
 }
 ```
-### 5. Delete user by ID - DELETE
-Endpoint: `/id`
 
-## Accessing the Database (MySQL)
+-----
 
-### 1. List running containers:
-```bash
-docker ps
-```
+## 🗃️ Accessing the Database (MySQL)
 
-### 2. Access the database container (usually named users-db-1):
-```bash
-docker exec -it [container_name] sh
-```
+You can directly connect to the MySQL container to inspect the data:
 
-### 3. Login to MYSQL:
-```bash
-mysql -u root -p
-```
-Password: `root123`
+1.  **List running containers:**
 
-### 4. Show available databases
-```bash
-SHOW DATABASES;
-```
+    ```bash
+    docker ps
+    ```
 
-### 5. Use the desired database:
-```bash
-USE teste;
-```
+    (The database container is typically named `users-db-1`).
 
-### 6. Show tables:
+2.  **Access the database container shell:**
 
-```bash
-SHOW tables;
-```
+    ```bash
+    docker exec -it [container_name] sh
+    ```
 
-### 7. Query user the table:
+3.  **Log in to the MySQL client:**
 
-```bash
-SELECT * FROM user\G;
-```
+    ```bash
+    mysql -u root -p
+    ```
 
-### Acessing Swagger
-> To access the Swagger documentation, open:
-http://localhost:8080/api
+    > **Password:** `root123`
 
-### Tech Stack:
-- Back end: Nestjs
-- Database: MYSQL    
-- Containerization: Docker with Docker compose
+4.  **Useful SQL Commands:**
+
+    ```sql
+    mysql> SHOW DATABASES;
+    mysql> USE teste;  -- Use the desired database
+    mysql> SHOW tables;
+    mysql> SELECT * FROM user\G; -- Query the user table
+    ```
