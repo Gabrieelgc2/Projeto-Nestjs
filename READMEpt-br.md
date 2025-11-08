@@ -93,3 +93,51 @@ Esta seção resume as operações CRUD principais disponíveis via API.
   "lastName": "Garcia",
   "isActive": true
 }
+````
+
+#### **4. Atualizar Usuário (`PUT /:id`)**
+
+```json
+{
+  "firstName": "Andre",
+  "lastName": "Daniel",
+  "isActive": true
+}
+```
+
+-----
+
+## 🗃️ Acessando o Banco de Dados (MySQL)
+
+Você pode se conectar diretamente ao contêiner MySQL para inspecionar os dados:
+
+1.  **Liste os contêineres em execução:**
+
+    ```bash
+    docker ps
+    ```
+
+    (O contêiner do banco de dados é geralmente nomeado `users-db-1`).
+
+2.  **Acesse o *shell* do contêiner do banco de dados:**
+
+    ```bash
+    docker exec -it [nome_do_container] sh
+    ```
+
+3.  **Faça login no cliente MySQL:**
+
+    ```bash
+    mysql -u root -p
+    ```
+
+    > **Senha:** `root123`
+
+4.  **Comandos SQL Úteis:**
+
+    ```sql
+    mysql> SHOW DATABASES;
+    mysql> USE teste;  -- Use o banco de dados desejado
+    mysql> SHOW tables;
+    mysql> SELECT * FROM user\G; -- Consulta a tabela de usuários
+    ```
